@@ -27,7 +27,7 @@ class GamesController < ApplicationController
 
   def english?(word)
     url = "https://wagon-dictionary.herokuapp.com/#{word}"
-    user_serialized = URI.open(url).read
+    user_serialized = RestClient.get(url)
     user = JSON.parse(user_serialized)
     return user["found"]
   end

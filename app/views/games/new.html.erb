@@ -2,7 +2,7 @@
 
 <ul class="d-flex list-unstyled">
   <% @letters.each do |letter| %>
-    <div class="col-1 m-2 d-flex"><li class="bg-primary p-4 fs-2 text-white justify-content-center"><%= letter.capitalize %></li></div>
+    <div class="m-2 d-flex bg-primary"><li class="p-4 fs-2 text-white justify-content-center text-center" style="width: 80px; height: 80px;"><%= letter.capitalize %></li></div>
   <% end %>
 </ul>
 

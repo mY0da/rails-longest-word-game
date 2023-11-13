@@ -16,7 +16,7 @@ class GamesController < ApplicationController
     @h = { your_score: 0, message: "not an english word", time: Time.now - @old_time}
     params[:word].upcase.chars.each { |letter| @letters.delete_at(@letters.index(letter)) if @letters.include?(letter) }
     if english?(params[:word]) && params[:word].chars.size + @letters.size == grid_r
-      @h[:score] = params[:word].length / @h[:time]
+      @h[:your_score] = (params[:word].length / @h[:time]) * 100
       @h[:message] = "Well done"
     elsif params[:word].chars.size + @letters.size != grid_r
       @h[:message] = "not in the grid"

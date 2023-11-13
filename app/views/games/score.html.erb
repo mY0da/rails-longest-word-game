@@ -1,5 +1,5 @@
 <h1>Result!</h1>
 <p><%= @h[:message] %></p>
-<p><%= @h[:your_score] %></p>
+<p><%= @h[:your_score].round %></p>
 
 <%= link_to "Play again!", new_path %>
